@@ -20,8 +20,9 @@ void mainMenu(){
     image(images[1],width / buttonSize,height/buttonSize + height / 2,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
     image(images[1],width / buttonSize + width / 2,height/buttonSize,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
     image(images[1],width / buttonSize + width / 2,height/buttonSize + height / 2,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
+    if 
   }
-  clickEvent = false;
+  
 }
 
 
@@ -31,6 +32,8 @@ void main(){
     mainMenu()
   }
   
+  ## End
+  clickEvent = false;
   sleep(1000/ticksPerSecond)
 }
 void mouseClicked(){
