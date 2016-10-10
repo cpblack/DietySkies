@@ -1,0 +1,22 @@
+String mainMenuState = "main";
+String imageIndex[] = {"menuBackground.png","loadButton.png","saveButton.png","newFileButton.png","settingsButton.png"}
+PImage images[] = new PImage[imageIndex.length];
+
+
+void setup(){
+int t = 0;
+while (t < images.length && imageIndex[t] != "") {
+images[t] = loadImage(imageIndex[t])
+t = t + 1
+}
+}
+
+void mainMenu(){
+  int buttonSize = 8
+  image(images[0],0,0,width,height);
+  if (mainMenuState == "main"){
+    image(images[1],width / buttonSize,height/buttonSize,width / 2 - width / buttonSize,height/2 - width / buttonSize)
+    
+  }
+  
+}
