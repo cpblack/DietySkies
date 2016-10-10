@@ -1,3 +1,4 @@
+int ticksPerSecond = 60;
 String mainMenuState = "main";
 String imageIndex[] = {"menuBackground.png","loadButton.png","saveButton.png","newFileButton.png","settingsButton.png"}
 PImage images[] = new PImage[imageIndex.length];
@@ -19,7 +20,15 @@ void mainMenu(){
     image(images[1],width / buttonSize,height/buttonSize + height / 2,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
     image(images[1],width / buttonSize + width / 2,height/buttonSize,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
     image(images[1],width / buttonSize + width / 2,height/buttonSize + height / 2,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
-    
   }
   
+}
+
+
+void main(){
+  if (mainMenuState == "main"){
+    mainMenu()
+  }
+  
+  sleep(1000/ticksPerSecond)
 }
