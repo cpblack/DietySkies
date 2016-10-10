@@ -15,7 +15,10 @@ void mainMenu(){
   int buttonSize = 8
   image(images[0],0,0,width,height);
   if (mainMenuState == "main"){
-    image(images[1],width / buttonSize,height/buttonSize,width / 2 - width / buttonSize,height/2 - width / buttonSize)
+    image(images[1],width / buttonSize,height/buttonSize,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
+    image(images[1],width / buttonSize,height/buttonSize + height / 2,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
+    image(images[1],width / buttonSize + width / 2,height/buttonSize,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
+    image(images[1],width / buttonSize + width / 2,height/buttonSize + height / 2,width / 2 - (width / buttonSize * 2),height/2 - (height / buttonSize * 2))
     
   }
   
