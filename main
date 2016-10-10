@@ -26,6 +26,7 @@ void mainMenu(){
 
 
 void main(){
+  rect(0,0,width,height)
   if (mainMenuState == "main"){
     mainMenu()
   }
