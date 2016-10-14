@@ -10,6 +10,7 @@ class player.pde{
   void display(){
     if (currentLevel.quit == true){
       currentScreen = "mainmenu";
+      currentLeve.quit = false;
     }
     if (currentScreen == "mainmenu") {
       mainmenu();
