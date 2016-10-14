@@ -1,5 +1,4 @@
-XBGGridSize:40.
-YBGGridSize:40.
+
 ######
 grass.png:a.
 ground.png:b.
