@@ -1,6 +1,6 @@
-grass.png:a
-ground.png:b
-stone.png:c
+grass.png:a.
+ground.png:b.
+stone.png:c.
 ######
 aaaaaaaaaaaaaaa.
 aaabbbbbbbbbaaa.
