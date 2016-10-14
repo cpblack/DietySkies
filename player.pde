@@ -8,11 +8,14 @@ class player.pde{
   //==================
   
   void display(){
+    if (currentLevel.quit == true){
+      currentScreen = "mainmenu";
+    }
     if (currentScreen == "mainmenu") {
       mainmenu();
     } else if (currentScreen == "level") {
+      currentLevel.tick();
       currentLevel.display();
-      
     }
   }
   void mainmenu(){
