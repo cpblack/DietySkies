@@ -11,6 +11,6 @@ aaabbcccccbbaaa.
 aaabbbbbbbbbaaa.
 aaaaaaaaaaaaaaa.
 ######
-grassshrub:245,523
+grassshrub:54,67
 
 
