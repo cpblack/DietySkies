@@ -1,0 +1,4 @@
+class level {
+  quit = false;
+
+}
