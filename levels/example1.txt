@@ -11,6 +11,7 @@ aaabbcccccbbaaa.
 aaabbbbbbbbbaaa.
 aaaaaaaaaaaaaaa.
 ######
-grassshrub:54,67
+dekushrub:54,67.
+
 
 
