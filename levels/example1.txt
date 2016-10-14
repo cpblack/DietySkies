@@ -1,4 +1,5 @@
-
+XBGGridSize:40.
+YBGGridSize:40.
 ######
 grass.png:a.
 ground.png:b.
@@ -11,5 +12,6 @@ aaabbcccccbbaaa.
 aaabbbbbbbbbaaa.
 aaaaaaaaaaaaaaa.
 ######
+grassshrub:245,523
 
 
