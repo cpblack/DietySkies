@@ -1,6 +1,7 @@
 int beginNextTick;
 int rate = 20;
 float[] clickPos = new float[]{-100, -100};
+float[] dragPos = new float[]{-100, -100};
 boolean[] keys = {false, false, false, false};
 String menuState = "main";
 simage settingsButton;
@@ -72,13 +73,13 @@ void mainMenu() {
     settingsButton.doDraw();
     playButton.doDraw();
     characterAnimation.doDraw();
-    if (settingsButton.isClicked()) {
+    if ((settingsButton.isClicked()) ||  (settingsButton.isDragged())) {
       println("Button Clicked: settings");
     }
-    if (playButton.isClicked()) {
+    if ((playButton.isClicked()) ||  (playButton.isDragged())) {
       println("Button Clicked: play");
     }
-    if (characterAnimation.isClicked()) {
+    if ((characterAnimation.isClicked() ||  (characterAnimation.isDragged()))) {
       println("Animation Clicked: characterAnimation");
     }
   }
@@ -90,6 +91,7 @@ void mouseClicked() {
 }
 void mouseDragged() {
   dragEvent = true;
+  dragPos = new float[]{mouseX, mouseY};
 }
 void keyPressed() {
   if (keyCode == 40) {
@@ -132,3 +134,6 @@ void draw() {
   //while (beginNextTick < millis()) {
   //}
 }
+
+
+
