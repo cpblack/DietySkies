@@ -1,11 +1,14 @@
-int ticksPerSecond = 60;
-String mainMenuState = "main";
-
+int beginNextTick;
+int rate = 60;
+String menuState = "main";
+button settingsButton;
+button playButton;
 PImage[] images;
 boolean clickEvent = false;
-
-void setup() {
-  String[] imageIndex = {"urban circles.jpg"};
+boolean dragEvent = false;
+simage menuBackground;
+void initializeImages() {
+  String[] imageIndex = {"urban circles.jpg", "aquabutton.png","settings button.png","play button.png"};
   images = new PImage[imageIndex.length];
   int t = 0;
   while (t < images.length && imageIndex[t] != "") {
@@ -13,24 +16,46 @@ void setup() {
     t = t + 1;
   }
 }
+void initializeVariableValues(){
+  int borderSize = 70;
+  playButton = new button(width / borderSize,height / borderSize,width / 2 - width / borderSize * 2, height / 2 - height / borderSize * 2, images[3]);
+  settingsButton = new button(width / 2 + width / borderSize,height / 2 + height / borderSize,width / 2 - width / borderSize * 2, height / 2 - height / borderSize * 2, images[2]);
+  menuBackground = new simage(images[0], float(0), 0.0, float(width), float(height));
+}
+void setup() {
+  size(400, 400);
+  initializeImages();
+  initializeVariableValues();
+}
 
 void mainMenu() {
-  if (mainMenuState == "main") {
-    image(images[0], 0, 0, width, height);
-  }
-}
 
-
-void main() {
   rect(0, 0, width, height);
-  if (mainMenuState == "main") {
-    mainMenu();
+  if (menuState == "main") {
+    menuBackground.doDraw();
+    settingsButton.doDraw();
+    playButton.doDraw();
+    if (settingsButton.isClicked()) {
+      print("settings ");
+    }
+    if (playButton.isClicked()) {
+      print("play ");
+    }
   }
-
-  // End
-  clickEvent = false;
-  delay(1000/ticksPerSecond);
 }
+
 void mouseClicked() {
   clickEvent = true;
+}
+void mouseDragged() {
+dragEvent = true;
+}
+void draw() {
+  beginNextTick = millis() + rate;
+  mainMenu();
+  
+  clickEvent = false;
+  dragEvent = false;
+  while (beginNextTick < millis()) {
+  }
 }
