@@ -6,6 +6,10 @@ class animation{
   float y;
   float xSize;
   float ySize;
+  void setPosition(float xIn, float yIn){
+    x = xIn;
+    y = yIn;
+  }
   animation(PImage[] imagesIn,float frameRateIn,xIn,yIn,xSizeIn,ySizeIn){
     images = imagesIn
     frameRate = frameRateIn
