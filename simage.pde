@@ -1,24 +1,18 @@
-class button { 
+class simage { 
   float x;
   float y;
   float xSize;
   float ySize;
   PImage myImage;
-  button(float xpos, float ypos, float xSizeIn, float ySizeIn, PImage imageIn) {
+  simage(float xpos, float ypos, float xSizeIn, float ySizeIn, PImage imageIn) {
     x = xpos;
     y = ypos;
     xSize = xSizeIn;
     ySize = ySizeIn;
-    if (imageIn != null) {
-      myImage = imageIn;
-    }
+    myImage = imageIn;
   }
   void doDraw() {
-    if (myImage != null) {
-      image(myImage, x, y, xSize, ySize);
-    } else {
-      print("Tried drawing button, image was null.");
-    }
+    image(myImage, x, y, xSize, ySize);
   }
   boolean isClicked() {
     boolean output = false;
