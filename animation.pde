@@ -32,6 +32,13 @@ class animation {
     }
     return output;
   }
+  boolean isDragged() {
+    boolean output = false;
+    if (dragEvent == true && dragPos[0]>= x && dragPos[1] >= y && dragPos[0] <= x + xSize && dragPos[1] <= y + ySize) {
+      output = true;
+    }
+    return output;
+  }
   boolean isHovered() {
     boolean output = false;
     if (clickPos[0] >= x && clickPos[1] >= y && clickPos[0] <= x + xSize && clickPos[1] <= y + ySize) {
