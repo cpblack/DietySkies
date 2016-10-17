@@ -1,6 +1,6 @@
 class animation{
   PImage[] images;
-  float frameRate;
+  float frameRate = -1;
   float firstFrame;
   float x;
   float y;
@@ -10,18 +10,18 @@ class animation{
     x = xIn;
     y = yIn;
   }
-  animation(PImage[] imagesIn,float frameRateIn,xIn,yIn,xSizeIn,ySizeIn){
-    images = imagesIn
-    frameRate = frameRateIn
+  animation(PImage[] imagesIn,float frameRateIn,float xIn,float yIn,float xSizeIn,float ySizeIn){
+    images = imagesIn;
+    frameRate = frameRateIn;
     x = xIn;
     y = yIn;
     xSize = xSizeIn;
     ySize = ySizeIn;
   }
   void display(){
-    if (firstFrame == null) {
-      firstFrame = frameCount
+    if (firstFrame == -1){
+      firstFrame = frameCount;
     }
-    image(images[floor(firstFrame / frameRate) % images.length],x,y,xSize,ySize)
+    image(images[floor(firstFrame / frameRate) % images.length],x,y,xSize,ySize);
   }
 }
