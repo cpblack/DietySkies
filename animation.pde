@@ -9,7 +9,10 @@ class animation{
   animation(PImage[] imagesIn,float frameRateIn,xIn,yIn,xSizeIn,ySizeIn){
     images = imagesIn
     frameRate = frameRateIn
-    
+    x = xIn;
+    y = yIn;
+    xSize = xSizeIn;
+    ySize = ySizeIn;
   }
   void display(){
     if (firstFrame == null) {
