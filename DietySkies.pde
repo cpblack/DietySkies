@@ -23,7 +23,7 @@ void initializeVariableValues(){
   menuBackground = new simage(images[0], float(0), 0.0, float(width), float(height));
 }
 void setup() {
-  size(400, 400);
+  size(800, 800);
   initializeImages();
   initializeVariableValues();
 }
@@ -51,11 +51,13 @@ void mouseDragged() {
 dragEvent = true;
 }
 void draw() {
-  beginNextTick = millis() + rate;
+  int currentMillis = millis();
+  beginNextTick = currentMillis + rate;
   mainMenu();
   
   clickEvent = false;
   dragEvent = false;
-  while (beginNextTick < millis()) {
-  }
+  delay(min(0,beginNextTick - currentMillis));
+  //while (beginNextTick < millis()) {
+  //}
 }
