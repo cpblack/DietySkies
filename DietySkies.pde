@@ -1,5 +1,6 @@
 int beginNextTick;
-int rate = 60;
+int rate = 20;
+float[] clickPos = new float[]{-100,-100};
 boolean[] keys = {false,false,false,false};
 String menuState = "main";
 simage settingsButton;
@@ -83,6 +84,7 @@ void mainMenu() {
 
 void mouseClicked() {
   clickEvent = true;
+  clickPos = new float[]{mouseX,mouseY};
 }
 void mouseDragged() {
   dragEvent = true;
