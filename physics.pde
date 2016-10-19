@@ -1,6 +1,6 @@
 class physics {
-  accelerationTickAdjust = 1;
-  speedTickAdjust = 1;
+  float accelerationTickAdjust = 1;
+  float speedTickAdjust = 1;
   float x;
   float y;
   float xSpeed;
@@ -12,7 +12,7 @@ class physics {
   float xMax;
   float yMax;
   float drag;
-  physics(float xIn, float yIn, float xSpeedIn,float ySpeedIn, float xAccelerationIn,float yAcellerationIn, float xMinIn, float xMinIn, float xMaxIn, float yMaxIn,float dragIn){
+  physics(float xIn, float yIn, float xSpeedIn,float ySpeedIn, float xAccelerationIn,float yAccelerationIn, float xMinIn, float yMinIn, float xMaxIn, float yMaxIn,float dragIn){
     x = xIn;
     y = yIn;
     xSpeed = xSpeedIn;
@@ -30,54 +30,54 @@ class physics {
       if (ySpeed < 0) {
         ySpeed = 0;
       }
-      ySpeed = ySpeed + (yAcceleration * tickAdjust);
+      ySpeed = ySpeed + (yAcceleration * accelerationTickAdjust);
     }
     if ((keys[2]) && (keys[0] == false)) {
       if (ySpeed > 0) {
         ySpeed = 0;
       }
-      ySpeed = ySpeed - (yAcceleration * tickAdjust);
+      ySpeed = ySpeed - (yAcceleration * accelerationTickAdjust);
     }
     if ((keys[1]) && (keys[3] == false)) {
       if (xSpeed < 0) {
         xSpeed = 0;
       }
-      xSpeed = xSpeed + (xAcceleration * tickAdjust);
+      xSpeed = xSpeed + (xAcceleration * accelerationTickAdjust);
     }
     if ((keys[3]) && (keys[1] == false)) {
       if (xSpeed > 0) {
         xSpeed = 0;
       }
-      xSpeed = xSpeed - (xAcceleration * tickAdjust);
+      xSpeed = xSpeed - (xAcceleration * accelerationTickAdjust);
     }
   }
   void tick(){
     if (xSpeed > 0) {
       if (xSpeed > drag) {
-        xSpeed = xSpeed - drag
+        xSpeed = xSpeed - drag;
       } else if (drag > 0){
-        xSpeed = 0
+        xSpeed = 0;
       }
     if (xSpeed < 0) {
       if (abs(xSpeed) > drag) {
-        xSpeed = xSpeed + drag
+        xSpeed = xSpeed + drag;
       } else if (drag > 0){
-        xSpeed = 0
+        xSpeed = 0;
       }
     
     }
     
     if (ySpeed > 0) {
       if (ySpeed > drag) {
-        ySpeed = ySpeed - drag
+        ySpeed = ySpeed - drag;
       } else if (drag > 0){
-        ySpeed = 0
+        ySpeed = 0;
       }
     if (ySpeed < 0) {
       if (abs(ySpeed) > drag) {
-        ySpeed = ySpeed + drag
+        ySpeed = ySpeed + drag;
       } else if (drag > 0){
-        ySpeed = 0
+        ySpeed = 0;
       }
     
     }
