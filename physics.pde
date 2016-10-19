@@ -1,5 +1,6 @@
 class physics {
-  tickAdjust = 1;
+  accelerationTickAdjust = 1;
+  speedTickAdjust = 1;
   float x;
   float y;
   float xSpeed;
@@ -47,5 +48,9 @@ class physics {
       }
       xSpeed = xSpeed - (xAcceleration * tickAdjust);
     }
+  }
+  void tick(){
+    x = x + xSpeed * speedTickAdjust;
+    y = y + ySpeed * speedTickAdjust;
   }
 }
