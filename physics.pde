@@ -11,7 +11,8 @@ class physics {
   float yMin;
   float xMax;
   float yMax;
-  physics(float xIn, float yIn, float xSpeedIn,float ySpeedIn, float xAccelerationIn,float yAcellerationIn, float xMinIn, float xMinIn, float xMaxIn, float yMaxIn){
+  float drag;
+  physics(float xIn, float yIn, float xSpeedIn,float ySpeedIn, float xAccelerationIn,float yAcellerationIn, float xMinIn, float xMinIn, float xMaxIn, float yMaxIn,float dragIn){
     x = xIn;
     y = yIn;
     xSpeed = xSpeedIn;
@@ -22,6 +23,7 @@ class physics {
     yMin = yMinIn;
     xMax = xMaxIn;
     yMax = yMaxIn;
+    drag = dragIn;
   }
   void keyFactor(){
     if ((keys[0]) && (keys[2] == false)) {
@@ -50,6 +52,35 @@ class physics {
     }
   }
   void tick(){
+    if (xSpeed > 0) {
+      if (xSpeed > drag) {
+        xSpeed = xSpeed - drag
+      } else if (drag > 0){
+        xSpeed = 0
+      }
+    if (xSpeed < 0) {
+      if (abs(xSpeed) > drag) {
+        xSpeed = xSpeed + drag
+      } else if (drag > 0){
+        xSpeed = 0
+      }
+    
+    }
+    
+    if (ySpeed > 0) {
+      if (ySpeed > drag) {
+        ySpeed = ySpeed - drag
+      } else if (drag > 0){
+        ySpeed = 0
+      }
+    if (ySpeed < 0) {
+      if (abs(ySpeed) > drag) {
+        ySpeed = ySpeed + drag
+      } else if (drag > 0){
+        ySpeed = 0
+      }
+    
+    }
     x = x + xSpeed * speedTickAdjust;
     y = y + ySpeed * speedTickAdjust;
   }
