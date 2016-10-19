@@ -27,25 +27,25 @@ class physics {
       if (ySpeed < 0) {
         ySpeed = 0;
       }
-      ySpeed = ySpeed + yAcceleration;
+      ySpeed = ySpeed + (yAcceleration * tickAdjust);
     }
     if ((keys[2]) && (keys[0] == false)) {
       if (ySpeed > 0) {
         ySpeed = 0;
       }
-      ySpeed = ySpeed - yAcceleration;
+      ySpeed = ySpeed - (yAcceleration * tickAdjust);
     }
     if ((keys[1]) && (keys[3] == false)) {
       if (xSpeed < 0) {
         xSpeed = 0;
       }
-      xSpeed = xSpeed + xAcceleration;
+      xSpeed = xSpeed + (xAcceleration * tickAdjust);
     }
     if ((keys[3]) && (keys[1] == false)) {
       if (xSpeed > 0) {
         xSpeed = 0;
       }
-      xSpeed = xSpeed - xAcceleration;
+      xSpeed = xSpeed - (xAcceleration * tickAdjust);
     }
   }
 }
